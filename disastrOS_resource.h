@@ -1,18 +1,24 @@
 #pragma once
 #include "linked_list.h"
 #include "disastrOS_pcb.h"
+#include "disastrOS_pcb.h"
+
+#define DSOS_STANDARD_RESOURCE 0
+#define DSOS_MSG_QUEUE_RESOURCE 1
 
 
-typedef struct {
+
+typedef struct Resource {
   ListItem list;
-  int id;
+  const char *name;
+  int rid;
   int type;
   ListHead descriptors_ptrs;
 } Resource;
 
 void Resource_init();
 
-Resource* Resource_alloc(int id, int type);
+Resource* Resource_alloc(const char *name, int rid, int type);
 int Resource_free(Resource* resource);
 
 typedef ListHead ResourceList;
