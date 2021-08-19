@@ -24,3 +24,11 @@ void internal_openResource();
 void internal_closeResource();
 
 void internal_destroyResource();
+
+// SYSCALL MSG QUEUE
+void internal_msgQueueOpen();
+void internal_msgQueueCreate();
+void internal_msgQueueClose();
+void internal_msgQueueUnlink();
+void internal_msgQueueRead();
+void internal_msgQueueWrite();
