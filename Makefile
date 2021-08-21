@@ -1,8 +1,9 @@
 CC=gcc
-CCOPTS=--std=gnu99 -Wall 
+CCOPTS=--std=gnu99 -Wall
 AR=ar
 
-HEADERS=disastrOS.h\
+HEADERS=disastrOS_msg_queue.h\
+	disastrOS.h\
 	disastrOS_constants.h\
 	disastrOS_descriptor.h\
 	disastrOS_globals.h\
@@ -30,7 +31,14 @@ OBJS=pool_allocator.o\
      disastrOS_sleep.o\
      disastrOS_open_resource.o\
      disastrOS_close_resource.o\
-     disastrOS_destroy_resource.o
+     disastrOS_destroy_resource.o\
+     disastrOS_msgQueueOpen.o\
+     disastrOS_msgQueueClose.o\
+     disastrOS_msgQueueCreate.o\
+     disastrOS_msgQueueRead.o\
+     disastrOS_msgQueueWrite.o\
+     disastrOS_msgQueueUnlink.o\
+     disastrOS_msg_queue.o\
 
 LIBS=libdisastrOS.a
 
@@ -46,7 +54,7 @@ all:	$(LIBS) $(BINS)
 %.o:	%.c $(HEADERS)
 	$(CC) $(CCOPTS) -c -o $@  $<
 
-libdisastrOS.a: $(OBJS) $(HEADERS) 
+libdisastrOS.a: $(OBJS) $(HEADERS)
 	$(AR) -rcs $@ $^
 	$(RM) $(OBJS)
 
