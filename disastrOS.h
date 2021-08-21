@@ -1,6 +1,7 @@
 #pragma once
 #include "disastrOS_pcb.h"
 #include "linked_list.h"
+#include "disastrOS_msg_queue.h"
 
 #ifdef _DISASTROS_DEBUG_
 #include <stdio.h>
@@ -31,10 +32,21 @@ void disastrOS_shutdown();
 // timers
 void disastrOS_sleep(int);
 
-// respurces (files)
+// resources (files)
 int disastrOS_openResource(int resource_id, int type, int mode);
 int disastrOS_closeResource(int fd) ;
 int disastrOS_destroyResource(int resource_id);
+
+//*******************************************************************************************************
+// message queues
+int disastrOS_msgQueueCreate(const char *name);
+int disastrOS_msgQueueOpen(const char *name);
+int disastrOS_msgQueueClose(int mqdes);
+int disastrOS_msgQueueUnlink(const char *name);
+int disastrOS_msgQueueRead(int mqdes, char *msg_ptr, unsigned msg_len);
+int disastrOS_msgQueueWrite(int mqdes, const char *msg_ptr, unsigned msg_len, unsigned priority);
+//*******************************************************************************************************
+
 
 // debug function, prints the state of the internal system
 void disastrOS_printStatus();
