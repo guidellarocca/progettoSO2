@@ -21,12 +21,13 @@ void Resource_init(){
     assert(! result);
 }
 
-Resource* Resource_alloc(int id, int type){
+Resource* Resource_alloc(const char *name, int rid, int type){
   Resource* r=(Resource*) PoolAllocator_getBlock(&_resources_allocator);
   if (!r)
     return 0;
   r->list.prev=r->list.next=0;
-  r->id=id;
+  r->name = name;
+  r->rid=rid;
   r->type=type;
   List_init(&r->descriptors_ptrs);
   return r;
@@ -42,7 +43,7 @@ Resource* ResourceList_byId(ResourceList* l, int id) {
   ListItem* aux=l->first;
   while(aux){
     Resource* r=(Resource*)aux;
-    if (r->id==id)
+    if (r->rid==id)
       return r;
     aux=aux->next;
   }
@@ -50,7 +51,7 @@ Resource* ResourceList_byId(ResourceList* l, int id) {
 }
 
 void Resource_print(Resource* r) {
-  printf("id: %d, type:%d, pids:", r->id, r->type);
+  printf("id: %d, type:%d, pids:", r->rid, r->type);
   DescriptorPtrList_print(&r->descriptors_ptrs);
 }
 

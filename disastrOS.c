@@ -377,9 +377,6 @@ void disastrOS_printStatus(){
   printf("\nResources: ");
   ResourceList_print(&resources_list);
 
-  printf("\nMessage Queues: ");
-  MsgQueuePtrList_print(&msg_queues_list);
-
   printf("\nReady: ");
   PCBList_print(&ready_list);
   printf("\nWaiting: ");

@@ -29,7 +29,7 @@
 // macro associate alla MsgQueue
 #define MSG_QUEUE_SIZE sizeof(MsgQueue)
 #define MSG_QUEUE_MEM_SIZE (MSG_QUEUE_SIZE + sizeof(int))
-#define MSG_QUEUE_BUFFER_SIZE MAX_NUM_RESOURCES * MESSAGE_QUEUE_MEM_SIZE
+#define MSG_QUEUE_BUFFER_SIZE MAX_NUM_RESOURCES * MSG_QUEUE_MEM_SIZE
 
 // macro associate a MsgQueuePtr
 #define MSG_QUEUE_PTR_SIZE sizeof(MsgQueuePtr)
@@ -82,7 +82,7 @@ char* Text_alloc() {
 int Text_free(char *s) {
     PoolAllocatorResult res = PoolAllocator_releaseBlock(&_texts_allocator, s);
     if (res != Success) {
-        printf("ERROR Failed to deallocate text allocator!\n")
+        printf("ERROR Failed to deallocate text allocator!\n");
         return -1;
     }
     return 0;
@@ -128,7 +128,7 @@ Message* Message_alloc(const char *msg, unsigned size) {
 
 // int Resource_free(Resource* r)
 int Message_free(Message *msg) {
-    PoolAllocatorResult res = PoolAllocator_init(&_messages_allocator, msg);
+    PoolAllocatorResult res = PoolAllocator_releaseBlock(&_messages_allocator, msg);
     if (res != Success) {
         printf("ERROR Failed to deallocate message %s!\n", msg->msg_ptr);
         return -1;
@@ -231,7 +231,7 @@ void MsgQueue_init() {
 }
 
 // Resource* Resource_alloc(int id, int type)
-Msgqueue* MsgQueue_alloc(const char *name, int id, PCB *pcb) {
+MsgQueue* MsgQueue_alloc(const char *name, int id, PCB *pcb) {
     MsgQueue *q = (MsgQueue*)PoolAllocator_getBlock(&_msg_queues_allocator);
     q->resource.list.prev = q->resource.list.next = NULL;
     q->resource.name = name;

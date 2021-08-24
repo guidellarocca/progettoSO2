@@ -177,6 +177,6 @@ int main(int argc, char** argv){
   }
   // spawn an init process
   printf("Start!\n");
-  disastrOS_start(initFunction, 0, logfilename);
+  disastrOS_start(initFunc, 0, logfilename);
   return 0;
 }
