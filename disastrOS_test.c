@@ -26,7 +26,7 @@ void producer() {
 
     memset(buf, 0, 256);
     priority = rand() % 10; // MODIFICARE per impostare priorità precisa
-    sprintf(buf, "Msg #&d", 1);
+    sprintf(buf, "Msg #%d", 1);
     printf("[PRODUCER pid = %d] Writing msg: '%s', priority: %u, size: %d\n\n", disastrOS_getpid(), buf, priority, (int)strlen(buf));
     disastrOS_msgQueueWrite(mqdes, buf, strlen(buf), priority);
     disastrOS_printStatus();
@@ -37,14 +37,14 @@ void producer() {
 
     memset(buf, 0, 256);
     priority = rand() % 10; // MODIFICARE per impostare priorità precisa
-    sprintf(buf, "Msg #&d", 2);
+    sprintf(buf, "Msg #%d", 2);
     printf("[PRODUCER pid = %d] Writing msg: '%s', priority: %u, size: %d\n\n", disastrOS_getpid(), buf, priority, (int)strlen(buf));
     disastrOS_msgQueueWrite(mqdes, buf, strlen(buf), priority);
     disastrOS_printStatus();
 
     memset(buf, 0, 256);
     priority = rand() % 10; // MODIFICARE per impostare priorità precisa
-    sprintf(buf, "Msg #&d", 3);
+    sprintf(buf, "Msg #%d", 3);
     printf("[PRODUCER pid = %d] Writing msg: '%s', priority: %u, size: %d\n\n", disastrOS_getpid(), buf, priority, (int)strlen(buf));
     disastrOS_msgQueueWrite(mqdes, buf, strlen(buf), priority);
     disastrOS_printStatus();

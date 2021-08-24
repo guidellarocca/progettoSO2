@@ -11,7 +11,7 @@
 
 void internal_msgQueueRead() {
 
-    const mqdes = (int)running->syscall_args[0];
+    int mqdes = (int)running->syscall_args[0];
     char *msg_ptr = (char *) running->syscall_args[1];
     unsigned int msg_len = (unsigned) running->syscall_args[2];     // 256
 
