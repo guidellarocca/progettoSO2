@@ -57,7 +57,7 @@ Ovviamente le funzioni dichiarate devono essere implementate in [**disastrOS_msg
 
 4. In [**disastrOS_syscalls.h**](https://github.com/guidellarocca/progettoSO2/blob/main/disastrOS_syscalls.h) vengono DICHIARATE le syscalls:
 ```c
-    void internal_msgQueueCreate();
+      void internal_msgQueueCreate();
    	void internal_msgQueueOpen();
    	void internal_msgQueueClose();
    	void internal_msgQueueUnlink();
@@ -143,7 +143,7 @@ $ make
 $ ./disastrOS_test
 ```
 
-Nell'eventualità è possibile pulire la build (per poi compilare nuovamente in seguito) usando il seguente comando
+Nell'eventualità è possibile 'pulire' la build (per poi compilare nuovamente in seguito) usando il seguente comando
 ```sh
 $ make clean
 ```
