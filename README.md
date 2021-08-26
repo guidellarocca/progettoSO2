@@ -56,14 +56,14 @@ Ovviamente le funzioni dichiarate devono essere implementate in [**disastrOS_msg
   	- DSOS_CALL_MQ_WRITE
 
 4. In [**disastrOS_syscalls.h**](https://github.com/guidellarocca/progettoSO2/blob/main/disastrOS_syscalls.h) vengono DICHIARATE le syscalls:
-'''c
+```c
     void internal_msgQueueCreate();
    	void internal_msgQueueOpen();
    	void internal_msgQueueClose();
    	void internal_msgQueueUnlink();
    	void internal_msgQueueRead();
    	void internal_msgQueueWrite();
-'''
+```
 
 5. Le nuove syscalls vengono IMPLEMENTATE in dei file C cosi da rendere possibile la gestione delle msg queues:
 
@@ -130,8 +130,8 @@ Definiamo la costante 'ITERATIONS' per scegliere il numero di iterazioni che ver
 
 Per vedere il funzionamento di 'disastrOS_test', aprire terminale ed eseguire i seguenti:
 
-* $`git clone https://github.com/guidellarocca/progettoSO2.git`
-* $`cd progettoSO2`
-* $`make`
-* $`./disastrOS_test`
+$ `git clone https://github.com/guidellarocca/progettoSO2.git`
+$ `cd progettoSO2`
+$ `make`
+$ `./disastrOS_test`
 
