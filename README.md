@@ -130,8 +130,35 @@ Definiamo la costante 'ITERATIONS' per scegliere il numero di iterazioni che ver
 
 Per vedere il funzionamento di 'disastrOS_test', aprire terminale ed eseguire i seguenti:
 
-$ `git clone https://github.com/guidellarocca/progettoSO2.git`
-$ `cd progettoSO2`
-$ `make`
-$ `./disastrOS_test`
+```sh
+$ git clone https://github.com/guidellarocca/progettoSO2.git
+```
+```sh
+$ cd progettoSO2
+```
+```sh
+$ make
+```
+```sh
+$ ./disastrOS_test
+```
+
+Nell'eventualità è possibile pulire la build (per poi compilare nuovamente in seguito) usando il seguente comando
+```sh
+$ make clean
+```
+
+************************************************************************************
+************************************************************************************************************************************************************************
+************************************************************************************
+
+## Credits
+
+Progetto relativo al corso di Sistemi Operativi 2021/2022 La Sapienza Università Di Roma.
+
+A cura di:
+
+- Guido della Rocca (matricola 1711308): dellarocca.1711308@studenti.uniroma1.it
+
+
 
