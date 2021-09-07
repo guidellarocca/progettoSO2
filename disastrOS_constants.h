@@ -8,7 +8,7 @@
 // messages ***************************************
 #define MAX_TEXT_LEN                        255         // dimensione max del messaggio (se si imposta < 6 è possibile testare errori)
 #define MAX_NUM_MESSAGES                    1024
-#define MAX_NUM_MESSAGES_PER_MSG_QUEUE      1           // num max di messaggi nella coda (modificare per testare coda piena)
+#define MAX_NUM_MESSAGES_PER_MSG_QUEUE      3           // num max di messaggi nella coda (modificare < 3 per testare coda piena)
 #define MAX_NUM_PRIORITIES                  10          // num di subqueue della msg queue (modificare per testare vari errori)
 
 #define STACK_SIZE        16384
